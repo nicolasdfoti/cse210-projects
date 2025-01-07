@@ -39,17 +39,17 @@ class Program
                 letter = "F";
             }
 
-        if (remainder <= 3)
+        if (remainder <= 3 && grade > 60 && grade < 90)
             {
                 sign = "-";
             }
         
-        else if (remainder >= 7)
+        else if (remainder >= 7 && grade < 90 && grade > 60)
             {
                 sign = "+";
             }
 
-        Console.WriteLine($"You've got an {letter}{sign}.");
+        Console.WriteLine($"You've got a {letter}{sign}.");
 
         if (grade >= 70)
             {
