@@ -49,5 +49,7 @@ class Program
             keepPlaying = Console.ReadLine();
         }
 
+        Console.WriteLine("Thank you! Bye!")
+
     }
 }
