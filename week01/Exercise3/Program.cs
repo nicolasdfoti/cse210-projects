@@ -7,7 +7,8 @@ class Program
 
         Console.WriteLine("Hello World! This is the Exercise3 Project.");
 
-        int randomNumber = 6;
+        Random randomGenerator = new Random();
+        int randomNumber = randomGenerator.Next(0, 101);
         int answer = 0; 
 
         while (answer != randomNumber)
