@@ -15,6 +15,17 @@ class Program
             Console.Write("What is your guess? ");
             string choice = Console.ReadLine();
             answer = int.Parse(choice);
+
+            if (answer > randomNumber)
+            {
+                Console.WriteLine("Lower");
+            }
+
+            else if (answer < randomNumber)
+            {
+                Console.WriteLine("Higher");
+            }
+
         } 
 
         Console.WriteLine($"Congrats! {randomNumber} was the correct answer!");
