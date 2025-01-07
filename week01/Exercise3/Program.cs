@@ -4,21 +4,20 @@ class Program
 {
     static void Main(string[] args)
     {
+        
         Console.WriteLine("Hello World! This is the Exercise3 Project.");
 
-        int randomNumber = 6
+        int randomNumber = 6;
+        int answer = 0; 
 
-        do
+        while (answer != randomNumber)
         {
             Console.WriteLine("What is your guess? ");
-            string answer = Console.ReadLine();
-            int answer = int.Parse(answer);
-        } while (answer != randomNumber);
+            string choice = Console.ReadLine();
+            answer = int.Parse(choice);
+        } 
 
-        if (answer == randomNumber)
-            {
-                Console.WriteLine($"Congrats! {randomNumber} was the correct answer!")
-            }
+        Console.WriteLine($"Congrats! {randomNumber} was the correct answer!");
 
     }
 }
