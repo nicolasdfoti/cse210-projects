@@ -7,29 +7,47 @@ class Program
 
         Console.WriteLine("Hello World! This is the Exercise3 Project.");
 
-        Random randomGenerator = new Random();
-        int randomNumber = randomGenerator.Next(0, 101);
-        int answer = 0; 
+        string keepPlaying = "yes";
 
-        while (answer != randomNumber)
+        while (keepPlaying == "yes")
+
         {
-            Console.Write("What is your guess? ");
-            string choice = Console.ReadLine();
-            answer = int.Parse(choice);
 
-            if (answer > randomNumber)
+            Random randomGenerator = new Random();
+            int randomNumber = randomGenerator.Next(0, 101);
+
+            int guesses = 0;
+            int answer = 0; 
+
+            while (answer != randomNumber)
             {
-                Console.WriteLine("Lower");
-            }
+                guesses++;
+                Console.Write("What is your guess? ");
+                string choice = Console.ReadLine();
+                answer = int.Parse(choice);
 
-            else if (answer < randomNumber)
-            {
-                Console.WriteLine("Higher");
-            }
+                if (answer > randomNumber)
+                {
+                    Console.WriteLine("Lower");
+                }
 
-        } 
+                else if (answer < randomNumber)
+                {
+                    Console.WriteLine("Higher");
+                }
 
-        Console.WriteLine($"Congrats! {randomNumber} was the correct answer!");
+                else
+                {
+                    Console.WriteLine("Please, enter a valid number.")
+                }
+
+            } 
+
+            Console.WriteLine($"Congrats! {randomNumber} was the correct answer! You guessed {guesses} times");
+
+            Console.WriteLine("Do you want to keep playing? ");
+            keepPlaying = Console.ReadLine();
+        }
 
     }
 }
