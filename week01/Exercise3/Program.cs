@@ -20,6 +20,7 @@ class Program
             int answer = 0; 
 
             while (answer != randomNumber)
+
             {
                 guesses++;
                 Console.Write("What is your guess? ");
@@ -38,7 +39,7 @@ class Program
 
                 else
                 {
-                    Console.WriteLine("Please, enter a valid number.")
+                    Console.WriteLine("Please, enter a valid number.");
                 }
 
             } 
@@ -49,7 +50,7 @@ class Program
             keepPlaying = Console.ReadLine();
         }
 
-        Console.WriteLine("Thank you! Bye!")
+        Console.WriteLine("Thank you! Bye!");
 
     }
 }
