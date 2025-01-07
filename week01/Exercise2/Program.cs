@@ -35,5 +35,15 @@ class Program
                 Console.WriteLine("You've got an F.");
             }
 
+        if (grade >= 70)
+            {
+                Console.WriteLine("Congratulations! You passed the course");
+            }
+        
+        else
+            {
+                Console.WriteLine("Sorry, try again next semester!");
+            }
+
     }
 }
