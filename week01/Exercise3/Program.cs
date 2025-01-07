@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        
+
         Console.WriteLine("Hello World! This is the Exercise3 Project.");
 
         int randomNumber = 6;
@@ -12,7 +12,7 @@ class Program
 
         while (answer != randomNumber)
         {
-            Console.WriteLine("What is your guess? ");
+            Console.Write("What is your guess? ");
             string choice = Console.ReadLine();
             answer = int.Parse(choice);
         } 
