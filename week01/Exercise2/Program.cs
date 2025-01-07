@@ -15,32 +15,29 @@ class Program
         if (grade >= 90)
             {
                 letter = "A";
-                Console.WriteLine($"You've got an {letter}.");
             }
 
         else if (grade > 80 && grade < 90)
             {
                 letter = "B";
-                Console.WriteLine($"You've got a {letter}.");
             }
 
         else if (grade > 70 && grade < 80)
             {
                 letter = "C";
-                Console.WriteLine($"You've got a {letter}.");
             }
 
         else if (grade > 60 && grade <= 70)
             {
                 letter = "D";
-                Console.WriteLine($"You've got a {letter}.");
             }
         
         else if (grade < 60)
             {
                 letter = "F";
-                Console.WriteLine($"You've got an {letter}.");
             }
+
+        Console.WriteLine($"You've got an {letter}.");
 
         if (grade >= 70)
             {
