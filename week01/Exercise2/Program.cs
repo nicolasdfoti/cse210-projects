@@ -10,7 +10,7 @@ class Program
         string gradeAnswer = Console.ReadLine();
         int grade = int.Parse(gradeAnswer);
 
-        string letter = "A";
+        string letter = "";
         int remainder = grade % 10;
         string sign = "";
 
