@@ -11,6 +11,7 @@ class Program
 
         int number = -1;
         int sum = 0;
+        float average = 0;
 
         while (number != 0)
         {
@@ -29,7 +30,7 @@ class Program
             sum += num;
         }
 
-        float average = sum / (float)numbers.Count;
+        average = sum / (float)numbers.Count;
 
         Console.WriteLine($"The SUM is up to {sum}");
         Console.WriteLine($"The AVERAGE is up to {average}");
