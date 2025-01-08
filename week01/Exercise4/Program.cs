@@ -43,11 +43,17 @@ class Program
         }
 
         average = sum / (float)numbers.Count;
+        numbers.Sort();
 
         Console.WriteLine($"The SUM is up to {sum}");
         Console.WriteLine($"The AVERAGE is up to {average}");
         Console.WriteLine($"The MAXIMUM is {max}");
         Console.WriteLine($"The MINIMUM is {min}");
+        
+        foreach (int num in numbers)
+        {
+            Console.WriteLine(num);
+        }
 
     }
 }
