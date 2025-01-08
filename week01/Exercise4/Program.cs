@@ -13,6 +13,7 @@ class Program
         int sum = 0;
         float average = 0;
         int max = 0;
+        int min = 1000000;
 
         while (number != 0)
         {
@@ -34,13 +35,19 @@ class Program
             {
                 max = num;
             }
+
+            if (num > 0 && num < min)
+            {
+                min = num;
+            }
         }
-        
+
         average = sum / (float)numbers.Count;
 
         Console.WriteLine($"The SUM is up to {sum}");
         Console.WriteLine($"The AVERAGE is up to {average}");
         Console.WriteLine($"The MAXIMUM is {max}");
+        Console.WriteLine($"The MINIMUM is {min}");
 
     }
 }
