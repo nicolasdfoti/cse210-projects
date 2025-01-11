@@ -1,11 +1,11 @@
 public class Resume
+{
+    public string _name = "";
+    public List<Job> _jobs = new List<Job>();
+
+    public void ResumeInformation()
     {
-        public string _name = "";
-        public List<Job> _jobs = new List<Job>();
-
-        public void ResumeInformation()
-        {
-            Console.WriteLine($"{_name} - {_jobs}");
-        }
-
+        Console.WriteLine($"{_name} - {_jobs}");
     }
+
+}
