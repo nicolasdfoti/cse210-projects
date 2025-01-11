@@ -5,25 +5,15 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello World! This is the Resumes Project.");
-    }
 
-           public class Job
-    {
-        string _company = "";
-        string _job_title = "";
-        int _start_year = 0;
-        int _end_year = 0;
+        Job job1 = new Job();
 
-        public void JobInformation()
-        {
-            Console.WriteLine($"{_job_title} ({_company}) {_start_year} - {_end_year}");
-        }
+        job1._company = "Ford";
+        job1._job_title = "Engineer";
+        job1._start_year = 2003;
+        job1._end_year = 2024;
+
+        job1.JobInformation();
 
     }
-
-        public class Resume
-        {
-            string _name = "";
-            List<Job> _jobs = 
-        }
 }
