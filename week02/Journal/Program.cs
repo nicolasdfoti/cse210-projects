@@ -25,8 +25,8 @@ class Program
             Console.WriteLine("Add your event here:");
             string memory = Console.ReadLine();
 
-            Console.WriteLine("Add the date here:");
-            string date = Console.ReadLine();
+            DateTime currentTime = DateTime.Now;
+            string date = currentTime.ToShortDateString();
             
             Entry entry = new Entry();
             entry._prompt = prompt;

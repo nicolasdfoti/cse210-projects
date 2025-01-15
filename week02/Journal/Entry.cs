@@ -9,7 +9,7 @@ public class Entry
     public void DisplayEntry() {
 
         Console.WriteLine($"Prompt: {_prompt} - Memory: {_memory} - Date: {_date}");
-        
+
     }
     
 }
