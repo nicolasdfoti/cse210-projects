@@ -6,41 +6,55 @@ class Program
     {
         Console.WriteLine("Hello World! This is the Journal Project.");
 
+        Journal journal = new Journal();
+        PromptGenerator randomPrompt = new PromptGenerator();
+        Menu menu = new Menu();
+
         string answer = "";
 
         while (answer != "5") {
-            Console.WriteLine("1. Add event");
-            Console.WriteLine("2. Display Journal");
-            Console.WriteLine("3. Save to a file");
-            Console.WriteLine("4. Load from a file");
-            Console.WriteLine("5. Exit");
-        }
+            
+            menu.DisplayMenu();
+            answer = Console.ReadLine();
 
-        if (answer == "1") {
+            if (answer == "1") {
 
+            string prompt = randomPrompt.GetRandomPrompt();
+            Console.WriteLine($"Prompt: {prompt}");
+
+            Console.WriteLine("Add your event here:");
+            string memory = Console.ReadLine();
+
+            Console.WriteLine("Add the date here:");
+            string date = Console.ReadLine();
+            
             Entry entry = new Entry();
+            entry._prompt = prompt;
+            entry._memory = memory;
+            entry._date = date;
 
             entry.DisplayEntry();
+            journal.AddEvent(entry);
+        
+            }
+
+            else if (answer == "2") {
+
+                journal.DisplayJournal();
+
+            }
+
+            else if (answer == "3") {
+
+            }
+
+            else if (answer == "4") {
+
+            }
 
         }
 
-        else if (answer == "2") {
-            
-            DisplayEntry();
-
-        }
-
-        else if (answer == "3") {
-
-        }
-
-        else if (answer == "4") {
-
-        }
-
-        else if (answer == "5") {
-            Console.WriteLine("Thanks for using the Journal App! Goodbye!");
-        }
-
+        Console.WriteLine("Thanks for using the Journal App! Goodbye!");
     }
+ 
 }

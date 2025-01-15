@@ -11,12 +11,11 @@ public class PromptGenerator
 
     };
 
-    public void RandomPrompt() {
+    public string GetRandomPrompt() {
 
-        foreach (var prompt in _prompt) {
-            Random random = new Random();
-            Console.WriteLine(random);
-        }
+        Random random = new Random();
+        int index = random.Next(_prompt.Count);
+        return _prompt[index];
 
     }
 
