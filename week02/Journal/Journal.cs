@@ -1,4 +1,5 @@
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 
 public class Journal
 {
@@ -37,14 +38,28 @@ public class Journal
     public string LoadFile(string fileName) {
 
         using (StreamReader reader = new StreamReader(fileName)) {
-        
-            Entry entry = new Entry();
-            _journal.Add(entry);
 
+            string line;
+
+            while ((line = reader.ReadLine()) != null) {
+
+                string[] parts = line.Split(new string[] { " - " }, StringSplitOptions.None);
+
+                if (parts.Length == 3) {
+
+                    Entry entry = new Entry
+                    {
+                        _prompt = parts[0].Replace("Prompt: ", "").Trim(),
+                        _memory = parts[1].Replace("Memory: ", "").Trim(),
+                        _date = parts[2].Replace("Date: ", "").Trim()
+                    };
+
+                    _journal.Add(entry);
+                }
+            }
         }
-    
+
         return fileName;
-
+        
     }
-
 }
