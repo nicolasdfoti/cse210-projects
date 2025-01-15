@@ -6,9 +6,9 @@ class Program
     {
         Console.WriteLine("Hello World! This is the Journal Project.");
 
+        Menu menu = new Menu();
         Journal journal = new Journal();
         PromptGenerator randomPrompt = new PromptGenerator();
-        Menu menu = new Menu();
 
         string answer = "";
 
