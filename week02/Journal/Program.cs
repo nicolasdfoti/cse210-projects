@@ -18,9 +18,15 @@ class Program
 
         if (answer == "1") {
 
+            Entry entry = new Entry();
+
+            entry.DisplayEntry();
+
         }
 
         else if (answer == "2") {
+            
+            DisplayEntry();
 
         }
 
