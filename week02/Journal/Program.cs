@@ -25,12 +25,16 @@ class Program
             Console.Write("Add your event here: ");
             string memory = Console.ReadLine();
 
+            Console.Write("How did you feel in the event? ");
+            string feeling = Console.ReadLine();
+
             DateTime currentTime = DateTime.Now;
             string date = currentTime.ToShortDateString();
             
             Entry entry = new Entry();
             entry._prompt = prompt;
             entry._memory = memory;
+            entry._feeling = feeling;
             entry._date = date;
 
             entry.DisplayEntry();

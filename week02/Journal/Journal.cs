@@ -26,7 +26,7 @@ public class Journal
 
             foreach (Entry entry in _journal) {
 
-                writer.WriteLine($"Prompt: {entry._prompt} - Memory: {entry._memory} - Date: {entry._date}");
+                writer.WriteLine($"Prompt: {entry._prompt} - Memory: {entry._memory} - Feeling {entry._feeling} - Date: {entry._date}");
 
             }
         }
@@ -45,13 +45,14 @@ public class Journal
 
                 string[] parts = line.Split(new string[] { " - " }, StringSplitOptions.None);
 
-                if (parts.Length == 3) {
+                if (parts.Length == 4) {
 
                     Entry entry = new Entry
                     {
                         _prompt = parts[0].Replace("Prompt: ", "").Trim(),
                         _memory = parts[1].Replace("Memory: ", "").Trim(),
-                        _date = parts[2].Replace("Date: ", "").Trim()
+                        _feeling = parts[2].Replace("Feeling: ", "").Trim(),
+                        _date = parts[3].Replace("Date: ", "").Trim()
                     };
 
                     _journal.Add(entry);
@@ -60,6 +61,6 @@ public class Journal
         }
 
         return fileName;
-        
+
     }
 }
