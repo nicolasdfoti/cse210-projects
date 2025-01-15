@@ -48,12 +48,17 @@ class Program
 
                 Console.Write("Add the file's name: ");
                 string fileName = Console.ReadLine();
-                journal.saveToFile(fileName);
+                journal.SaveToFile(fileName);
                 Console.WriteLine($"Entry saved to {fileName}");
                 
             }
 
             else if (answer == "4") {
+
+                Console.Write("Add the file's name: ");
+                string fileName = Console.ReadLine();
+                journal.LoadFile(fileName);
+                Console.WriteLine($"{fileName} loaded succesfully!");
 
             }
 

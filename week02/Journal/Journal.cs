@@ -19,7 +19,7 @@ public class Journal
         }
     }
 
-    public string saveToFile(string fileName) {
+    public string SaveToFile(string fileName) {
 
         using (StreamWriter writer = new StreamWriter(fileName)) {
 
@@ -30,6 +30,19 @@ public class Journal
             }
         }
 
+        return fileName;
+
+    }
+
+    public string LoadFile(string fileName) {
+
+        using (StreamReader reader = new StreamReader(fileName)) {
+        
+            Entry entry = new Entry();
+            _journal.Add(entry);
+
+        }
+    
         return fileName;
 
     }
