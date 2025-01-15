@@ -19,7 +19,7 @@ public class Journal
         }
     }
 
-    public void saveToFile(string fileName) {
+    public string saveToFile(string fileName) {
 
         using (StreamWriter writer = new StreamWriter(fileName)) {
 
@@ -30,7 +30,7 @@ public class Journal
             }
         }
 
-        Console.WriteLine($"Entry saved to {fileName}");
+        return fileName;
 
     }
 

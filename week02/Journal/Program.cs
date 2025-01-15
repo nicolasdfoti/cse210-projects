@@ -22,7 +22,7 @@ class Program
             string prompt = randomPrompt.GetRandomPrompt();
             Console.WriteLine($"Prompt: {prompt}");
 
-            Console.WriteLine("Add your event here:");
+            Console.Write("Add your event here: ");
             string memory = Console.ReadLine();
 
             DateTime currentTime = DateTime.Now;
@@ -46,6 +46,11 @@ class Program
 
             else if (answer == "3") {
 
+                Console.Write("Add the file's name: ");
+                string fileName = Console.ReadLine();
+                journal.saveToFile(fileName);
+                Console.WriteLine($"Entry saved to {fileName}");
+                
             }
 
             else if (answer == "4") {
