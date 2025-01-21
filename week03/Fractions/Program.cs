@@ -6,7 +6,7 @@ class Program
     {
         Console.WriteLine("Hello World! This is the Fractions Project.");
 
-        Fraction fraction1 = new Fraction(1, 2);
+        Fraction fraction1 = new Fraction();
 
         Console.WriteLine(fraction1.GetFractionString());
         Console.WriteLine(fraction1.GetDecimalValue());
