@@ -39,13 +39,13 @@ public class Fraction {
     }
 
     // Methods
-    public void GetFractionString() {
-        SetTop(3);
-        SetBottom(4);
+    public string GetFractionString() {
+        string text = $"{_top_number}/{_bottom_number}";
+        return text;
     }
 
     public double GetDecimalValue(int firstNumber, int bottomNumber) {
-        return firstNumber % bottomNumber;
+        return (double)firstNumber / (double)bottomNumber;
     }
 
 }
