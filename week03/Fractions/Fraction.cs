@@ -44,8 +44,8 @@ public class Fraction {
         return text;
     }
 
-    public double GetDecimalValue(int firstNumber, int bottomNumber) {
-        return (double)firstNumber / (double)bottomNumber;
+    public double GetDecimalValue() {
+        return (double)_top_number / _bottom_number;
     }
 
 }
