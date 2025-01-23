@@ -27,11 +27,12 @@ class Scripture {
                 _words[index].Hide();
                 hiddenCount++;
             }
+            
         }
 
     }
 
-    
+
 
     public void DisplayScripture() {
         Console.WriteLine($"{_words}");
