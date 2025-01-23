@@ -4,9 +4,9 @@ class Scripture {
 
 
     public Scripture(Reference reference, string text) {
+
         _reference = reference;
 
-        _words = new List<Word>();
         string[] words = text.Split(" ");
 
         foreach (string word in words) {
@@ -20,7 +20,8 @@ class Scripture {
         Random random = new Random();
         int hiddenCount = 0;
 
-        while (hiddenCount > total) {
+        while (hiddenCount < total) {
+
             int index = random.Next(_words.Count);
 
             if (!_words[index].IsHidden()) {
@@ -33,20 +34,29 @@ class Scripture {
     }
 
     public string GetDisplayText() {
+
         string displayText = _reference.GetDisplayText();
         
         foreach (Word word in _words) {
-            displayText += word.GetDisplayText();
+            displayText += word.GetDisplayText() + " ";
         }
 
-        return displayText;
+        return displayText.Trim();
 
     }
 
+    public bool IsCompletelyHidden() {
 
+        foreach (Word word in _words) {
+            
+            if (!word.IsHidden())
+            {
+                return false;
+            }
+        }
 
-    public void DisplayScripture() {
-        Console.WriteLine($"{_words}");
+        return true;
+
     }
 
 }

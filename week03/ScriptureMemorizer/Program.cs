@@ -7,12 +7,12 @@ class Program
         Console.WriteLine("Hello World! This is the ScriptureMemorizer Project.");
         Console.WriteLine();
 
-        Reference reference = new Reference("Joshua", 1, 9);
-        reference.GetDisplayText();
+        Reference reference = new Reference("Joshua", 1, 9 );
 
-        Scripture scripture = new Scripture();
-        scripture.DisplayScripture();
-        string text = Console.ReadLine();
+        string text = "Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for the Lord thy God is with thee whithersoever thou goest.";
+
+        Scripture scripture = new Scripture(reference, text);
+        Console.WriteLine(scripture.GetDisplayText());
         Console.WriteLine();
 
         Console.WriteLine("Press ENTER to continue. Type QUIT to finish");
@@ -21,13 +21,19 @@ class Program
         while (choice.ToLower() != "quit") {
 
             if (choice == "") {
-            Word word = new Word(text);
-            word.GetDisplayText();
 
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("Press ENTER to continue. Type QUIT to finish");
-            choice = Console.ReadLine();
+                scripture.HideRandomWords(3);
+
+                Console.WriteLine(scripture.GetDisplayText());
+                Console.WriteLine();
+
+                if (scripture.IsCompletelyHidden()) {
+                    break;
+                }
+
+                Console.WriteLine("Press ENTER to continue. Type QUIT to finish");
+                choice = Console.ReadLine();
+
             }
         }
 

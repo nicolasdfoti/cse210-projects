@@ -22,9 +22,7 @@ class Word {
     public string GetDisplayText() {
 
         if (_isHidden == true) {
-            foreach (var letter in _word) {
-                return "_";
-            }
+            return new string('_', _word.Length);
         }
 
         else if (_isHidden == false) {
