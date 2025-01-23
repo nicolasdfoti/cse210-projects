@@ -1,8 +1,8 @@
 class Reference {
 
-    private string _book = "Joshua";
-    private int _chapter = 1;
-    private int _startVerse = 9;
+    private string _book;
+    private int _chapter;
+    private int _startVerse;
     private int _endVerse;
 
     public Reference(string book, int chapter, int verse) {
