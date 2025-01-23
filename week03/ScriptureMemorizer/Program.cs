@@ -6,7 +6,6 @@ class Program
     {
         Console.WriteLine("Hello World! This is the ScriptureMemorizer Project.");
         Console.WriteLine();
-        
 
         Reference reference = new Reference("Joshua", 1, 9 );
 
