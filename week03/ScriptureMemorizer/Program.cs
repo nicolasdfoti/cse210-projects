@@ -10,8 +10,9 @@ class Program
         Reference reference = new Reference("Joshua", 1, 9);
         reference.GetDisplayText();
 
-        Scripture2 scripture = new Scripture2();
+        Scripture scripture = new Scripture();
         scripture.DisplayScripture();
+        string text = Console.ReadLine();
         Console.WriteLine();
 
         Console.WriteLine("Press ENTER to continue. Type QUIT to finish");
@@ -19,10 +20,9 @@ class Program
 
         while (choice.ToLower() != "quit") {
 
-            foreach (letter in scripture)
-
             if (choice == "") {
-            Word word = new Word();
+            Word word = new Word(text);
+            word.GetDisplayText();
 
             Console.WriteLine();
             Console.WriteLine();
