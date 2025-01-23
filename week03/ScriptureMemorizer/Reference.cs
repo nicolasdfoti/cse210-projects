@@ -18,8 +18,8 @@ class Reference {
         _endVerse = endVerse;
     }
 
-    public void GetDisplayText() {
-        Console.WriteLine($"{_book}{_chapter}: {_startVerse}-{_endVerse}");
+    public string GetDisplayText() {
+        return $"{_book}{_chapter}: {_startVerse}-{_endVerse}";
     }
 
 }

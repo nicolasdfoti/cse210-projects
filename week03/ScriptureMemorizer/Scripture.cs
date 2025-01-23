@@ -27,8 +27,19 @@ class Scripture {
                 _words[index].Hide();
                 hiddenCount++;
             }
-            
+
         }
+
+    }
+
+    public string GetDisplayText() {
+        string displayText = _reference.GetDisplayText();
+        
+        foreach (Word word in _words) {
+            displayText += word.GetDisplayText();
+        }
+
+        return displayText;
 
     }
 
