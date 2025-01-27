@@ -15,7 +15,7 @@ class Video
         Console.WriteLine($"Video: {_title} - Author: {_author} - Length: {_length}");
     }
 
-    public void DisplayComment() {
+    public void DisplayComments() {
         
         foreach (var comment in _comments) {
             comment.DisplayComment();
