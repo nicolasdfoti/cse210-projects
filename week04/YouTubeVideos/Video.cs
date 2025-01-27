@@ -18,8 +18,7 @@ class Video
     public void DisplayComment() {
         
         foreach (var comment in _comments) {
-            Console.WriteLine($"Comment: {comment._comment}");
-            Console.WriteLine($"Author: {comment._person}");
+            comment.DisplayComment();
         }
 
     }

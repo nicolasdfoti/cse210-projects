@@ -8,4 +8,9 @@ class Comment
         _comment = comment;
     }
 
+    public void DisplayComment() {
+        Console.WriteLine($"Comment: {_comment}");
+        Console.WriteLine($"Author: {_person}");
+    }
+
 }
