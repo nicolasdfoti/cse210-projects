@@ -12,8 +12,8 @@ class Video
         _length = length;
     }
 
-    public int NumberOfComments() {
-        return _commentList.Count();
+    public void NumberOfComments() {
+        Console.WriteLine($"Number of comments: {_commentList.Count()}");
     }
 
     public void DisplayInfo() {
