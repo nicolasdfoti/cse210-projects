@@ -15,18 +15,18 @@ class Video
         Console.WriteLine($"Video: {_title} - Author: {_author} - Length: {_length}");
     }
 
+    public void AddComment(string author, string comment) {
+
+        Comment newComment = new Comment(author, comment);
+        _comments.Add(newComment);
+    }
+
     public void DisplayComments() {
         
         foreach (var comment in _comments) {
             comment.DisplayComment();
         }
 
-    }
-
-    public void AddComment(string author, string comment) {
-
-        Comment newComment = new Comment(author, comment);
-        _comments.Add(newComment);
     }
 
 }
