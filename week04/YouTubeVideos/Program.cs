@@ -28,7 +28,7 @@ class Program
         string comment3 = "Excellent! What a player!";
         video.AddComment(person3, comment3); 
 
-        video.DisplayComments();
+        video.GetComment();
         Console.WriteLine($"Number of Comments: {video.NumberOfComments()}");
         
         Console.WriteLine();
@@ -55,7 +55,7 @@ class Program
         string comment6 = "I love my country!";
         video1.AddComment(person6, comment6);
 
-        video1.DisplayComments();
+        video1.GetComment();
         Console.WriteLine($"Number of Comments: {video1.NumberOfComments()}");
 
         Console.WriteLine();
@@ -82,7 +82,7 @@ class Program
         string comment9 = "Wow! Should I learn to code?";
         video2.AddComment(person9, comment9);
 
-        video2.DisplayComments();
+        video2.GetComment();
         Console.WriteLine($"Number of Comments: {video2.NumberOfComments()}");
 
         Console.WriteLine();
@@ -113,7 +113,7 @@ class Program
         string comment13 = "New York pizza is legendary!";
         video3.AddComment(person13, comment13);
 
-        video3.DisplayComments();
+        video3.GetComment();
         Console.WriteLine($"Number of Comments: {video3.NumberOfComments()}");
 
     }
