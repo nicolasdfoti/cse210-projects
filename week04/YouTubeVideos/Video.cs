@@ -4,4 +4,30 @@ class Video
     public string _author;
     public int _length;
     public List<Comment> _comments = new List<Comment>();
+
+    public Video(string title, string author, int length) {
+        _title = title;
+        _author = author;
+        _length = length;
+    }
+
+    public void DisplayInfo() {
+        Console.WriteLine($"Video: {_title} - Author: {_author} - Length: {_length}");
+    }
+
+    public void DisplayComment() {
+        
+        foreach (var comment in _comments) {
+            Console.WriteLine($"Comment: {comment._comment}");
+            Console.WriteLine($"Author: {comment._person}");
+        }
+
+    }
+
+    public void AddComment(string author, string comment) {
+
+        Comment newComment = new Comment(author, comment);
+        _comments.Add(newComment);
+    }
+
 }
