@@ -1,10 +1,11 @@
+using System.Net;
+
 class Video
 {
     public string _title;
     public string _author;
     public int _length;
     public List<Comment> _commentList = new List<Comment>();
-
     public Video(string title, string author, int length) {
         _title = title;
         _author = author;
@@ -31,8 +32,7 @@ class Video
 
     }
 
-    public void AddComment(string person, string text) {
-        Comment comment = new Comment(person, text);
+    public void AddComment(Comment comment) {
         _commentList.Add(comment);
     }
 
