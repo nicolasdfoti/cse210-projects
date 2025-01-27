@@ -25,6 +25,7 @@ class Program
         video.AddComment(person1, comment1);
 
         video.DisplayComments();
+        Console.WriteLine($"Number of Comments: {video.NumberOfComments()}");
         
         Console.WriteLine();
         Console.WriteLine();
@@ -47,6 +48,10 @@ class Program
         video1.AddComment(person3, comment3);
 
         video1.DisplayComments();
+        Console.WriteLine($"Number of Comments: {video1.NumberOfComments()}");
+
+        Console.WriteLine();
+        Console.WriteLine();
 
 
         // Video 3
@@ -66,6 +71,7 @@ class Program
         video2.AddComment(person5, comment5);
 
         video2.DisplayComments();
+        Console.WriteLine($"Number of Comments: {video2.NumberOfComments()}");
 
     }
 }

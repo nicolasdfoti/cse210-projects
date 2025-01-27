@@ -29,4 +29,8 @@ class Video
 
     }
 
+    public int NumberOfComments() {
+        return _comments.Count;
+    }
+
 }
