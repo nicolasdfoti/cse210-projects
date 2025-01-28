@@ -1,4 +1,5 @@
 class Order
 {
-    private List
+    private List<Product> _products = new List<Product>();
+    private string _customer;
 }
