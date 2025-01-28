@@ -29,6 +29,7 @@ class Order
         
         foreach(var product in _products) {
             Console.WriteLine($"Name: {product.GetName()} - Product: {product.GetProductID()}");
+            Console.WriteLine($"Total Cost: {CalculateTotalCost()}");
         }
 
     }
