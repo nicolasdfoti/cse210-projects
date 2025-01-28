@@ -1,16 +1,22 @@
 class Order
 {
     private List<Product> _products = new List<Product>();
-    private string _customer;
+    private Customer _customer;
+
+    public Order(List<Product> products, Customer customer) {
+        _products = products;
+        _customer = customer;
+    }
 
     public decimal CalculateTotalCost() {
 
-        Product product = new Product();
-        Customer customer = new Customer();
+        decimal subtotal = 0;
 
-        decimal subtotal = product.GetTotalCost();
+        foreach (var product in _products) {
+            subtotal += product.GetTotalCost();
+        }
 
-        if (customer.LivesINUSA()) {
+        if (_customer.LivesINUSA()) {
             return subtotal + 5;
         }
         
@@ -29,8 +35,9 @@ class Order
 
     public void DisplayShippingLabel() {
 
-        Customer customer = new Customer();
-        Console.WriteLine($"Name: {customer.GetName()}");
+        Console.WriteLine($"Name: {_customer.GetName()}");
+        Console.Write($"Address: ");
+        _customer.GetAddress().DisplayAddress();        
 
     }
 
