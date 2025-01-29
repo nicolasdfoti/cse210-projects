@@ -12,13 +12,13 @@ class Customer
         return _name;
     }
 
-    public Address GetAddress() {
-        return _address;
+    public string GetAddress() {
+        return _address.DisplayAddress();
     }
 
-    public bool LivesINUSA() {
-
-        return _address.GetCountry();
+    public bool LivesInUSA() {
+        
+        return _address.IsUSA();
 
     }
 

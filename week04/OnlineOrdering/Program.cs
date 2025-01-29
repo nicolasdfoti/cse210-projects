@@ -5,6 +5,7 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello World! This is the OnlineOrdering Project.");
+        Console.WriteLine();
 
 
 
@@ -16,7 +17,7 @@ class Program
         List<Product> products1 = new List<Product>() {product};
         Order order1 = new Order(products1, customer);
 
-        Console.WriteLine("First Order: ");
+        Console.WriteLine("- First Order: ");
         order1.DisplayPackingLabel();
         order1.DisplayShippingLabel();
         Console.WriteLine();
@@ -31,7 +32,7 @@ class Program
         List<Product> products2 = new List<Product>() {secondProduct};
         Order order2 = new Order(products2, secondCustomer);
 
-        Console.WriteLine("Second Order:");
+        Console.WriteLine("- Second Order:");
         order2.DisplayPackingLabel();
         order2.DisplayShippingLabel();
         Console.WriteLine();
@@ -46,7 +47,7 @@ class Program
         List<Product> products3 = new List<Product>() {thirdProduct};
         Order order3 = new Order(products3, thirdCustomer);
 
-        Console.WriteLine("Third Order:");
+        Console.WriteLine("- Third Order:");
         order3.DisplayPackingLabel();
         order3.DisplayShippingLabel();
         Console.WriteLine();
@@ -61,7 +62,7 @@ class Program
         List<Product> products4 = new List<Product>() {fourthProduct};
         Order order4 = new Order(products4, fourthCustomer);
 
-        Console.WriteLine("Fourth Order:");
+        Console.WriteLine("- Fourth Order:");
         order4.DisplayPackingLabel();
         order4.DisplayShippingLabel();
         Console.WriteLine();

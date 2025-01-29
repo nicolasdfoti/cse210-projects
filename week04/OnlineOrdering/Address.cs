@@ -5,6 +5,7 @@ class Address
     private string _state;
     private string _country;
 
+
     public Address(string street, string city, string state, string country) {
         _street = street;
         _city = city;
@@ -12,12 +13,23 @@ class Address
         _country = country;
     }
 
-    public bool GetCountry() {
-        return _country == "USA";
+
+    public bool IsUSA() {
+
+        if (_country == "USA") {
+            return true;
+        }
+
+        else {
+            return false;
+        }
+
     }
 
-    public void DisplayAddress() {
-        Console.WriteLine($"{_street}, {_city}, {_state}, {_country}");
+    
+    public string DisplayAddress() {
+
+        return $"{_street}, {_city}, {_state}, {_country}";
     }
 
 }
