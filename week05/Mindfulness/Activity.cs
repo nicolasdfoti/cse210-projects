@@ -36,6 +36,7 @@ public class Activity
 
     public void DisplayStartingMessage()
     {
+        Console.Clear();
         Console.WriteLine($"Welcome to the {_name}!");
     }
 
@@ -47,6 +48,7 @@ public class Activity
     public void DisplayEndingMessage()
     {
         Console.WriteLine($"Thanks for using the {_name}!");
+        Console.Clear();
     }
 
     public void ShowSpinner(int seconds)
@@ -59,11 +61,11 @@ public class Activity
             seconds--;
 
             foreach (char item in _array) {
-                Console.Write(item);
-                Console.Write("\b \b");
+                Console.Write($"\r{item} ");
                 Thread.Sleep(500);
             }
         }
+        Console.Write("\r  \r");
     }
 
     public void ShowCountDown(int seconds)

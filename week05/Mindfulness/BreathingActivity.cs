@@ -19,8 +19,10 @@ class BreathingActivity : Activity
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(duration);
 
-        Console.Write("Let's get started...  ");
-        ShowSpinner(5);
+        Console.WriteLine("Let's get started...  ");
+        ShowSpinner(3);
+
+        Console.WriteLine();
 
         while (DateTime.Now < futureTime)
         {
@@ -30,6 +32,7 @@ class BreathingActivity : Activity
             ShowCountDown(3);
         }
 
+        Console.WriteLine();
         DisplayEndingMessage();
 
     }
