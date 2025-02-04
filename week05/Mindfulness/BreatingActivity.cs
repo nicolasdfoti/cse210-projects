@@ -1,4 +1,0 @@
-class BreathingActivity : Activity
-{
-    
-}
