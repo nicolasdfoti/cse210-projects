@@ -11,9 +11,7 @@ class BreathingActivity : Activity
         Console.WriteLine(GetDescription());
         Console.WriteLine();
 
-        GetTime();
-
-        int duration = int.Parse(Console.ReadLine());
+        int duration = GetTime();
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(duration);
 

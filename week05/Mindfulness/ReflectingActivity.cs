@@ -50,8 +50,7 @@ public class ReflectingActivity : Activity
 
         ShowSpinner(3);
 
-        GetTime();
-        int duration = int.Parse(Console.ReadLine());
+        int duration = GetTime();
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(duration);
 
