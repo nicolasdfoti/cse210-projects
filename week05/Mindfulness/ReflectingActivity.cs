@@ -38,6 +38,8 @@ public class ReflectingActivity : Activity
         return question;
     }
 
+    string choice;
+
     public void Run()
     {
         DisplayStartingMessage();
@@ -50,6 +52,25 @@ public class ReflectingActivity : Activity
 
         ShowSpinner(3);
 
+        Console.WriteLine();
+    
+        while (choice != "")
+        {
+            Console.Write("Whenewer you're ready, press ENTER: ");
+            choice = Console.ReadLine();
+
+            if (choice != "")
+            {
+                Console.Write("Please, whenever you're ready, press ENTER. ");
+            }
+
+            else if (choice == "") {
+                continue;
+            }
+        }
+
+        Console.WriteLine();
+
         int duration = GetTime();
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(duration);
@@ -59,9 +80,10 @@ public class ReflectingActivity : Activity
 
             foreach (var question in _questions)
             {
-                Console.WriteLine(SelectRandomQuestion());
+                Console.Write(SelectRandomQuestion());
                 Thread.Sleep(1000);
                 ShowSpinner(3);
+                Console.WriteLine();
 
                 if (DateTime.Now >= futureTime)
                 {
