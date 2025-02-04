@@ -52,7 +52,6 @@ public class Activity
     public void DisplayEndingMessage()
     {
         Console.WriteLine($"Thanks for using the {_name}!");
-        Console.Clear();
     }
 
     public void ShowSpinner(int seconds)
@@ -79,6 +78,7 @@ public class Activity
         {
             Console.WriteLine($"{seconds}");
             Thread.Sleep(1000);
+            Console.Write("\r  \r");
             seconds--;
         }
         

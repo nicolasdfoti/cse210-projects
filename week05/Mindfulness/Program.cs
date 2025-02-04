@@ -20,7 +20,7 @@ class Program
             Console.WriteLine("2. Reflecting Activity.");
             Console.WriteLine("3. Listing Activity.");
             Console.WriteLine();
-            Console.Write("Enter your option here: ");
+            Console.Write("Enter your option here, or write QUIT to exit: ");
 
             option = Console.ReadLine();
             Console.WriteLine();

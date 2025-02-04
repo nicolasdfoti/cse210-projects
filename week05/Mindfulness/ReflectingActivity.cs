@@ -63,10 +63,6 @@ public class ReflectingActivity : Activity
             {
                 Console.Write("Please, whenever you're ready, press ENTER. ");
             }
-
-            else if (choice == "") {
-                continue;
-            }
         }
 
         Console.WriteLine();
@@ -78,22 +74,17 @@ public class ReflectingActivity : Activity
         while (DateTime.Now < futureTime)
         {
 
-            foreach (var question in _questions)
-            {
-                Console.Write(SelectRandomQuestion());
-                Thread.Sleep(1000);
-                ShowSpinner(3);
-                Console.WriteLine();
-
-                if (DateTime.Now >= futureTime)
-                {
-                    break;
-                }
-            };
+            string question = SelectRandomQuestion();
+            Console.Write($"{question} ");
+            Thread.Sleep(1000);
+            ShowSpinner(3);
+            Console.WriteLine();
 
         }
 
-        Console.WriteLine();
+        DisplayEndingMessage();
+        ShowSpinner(5);
+        Console.Clear();
     }
 
 }

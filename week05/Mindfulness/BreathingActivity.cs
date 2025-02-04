@@ -28,7 +28,12 @@ class BreathingActivity : Activity
         }
 
         Console.WriteLine();
+
         DisplayEndingMessage();
+
+        ShowSpinner(3);
+        
+        Console.Clear();
 
     }
 }
