@@ -65,11 +65,11 @@ public class Activity
             seconds--;
 
             foreach (char item in _array) {
-                Console.Write($"\r{item} ");
+                Console.Write(item);
                 Thread.Sleep(500);
+                Console.Write("\b \b");
             }
         }
-        Console.Write("\r  \r");
     }
 
     public void ShowCountDown(int seconds)
@@ -78,8 +78,8 @@ public class Activity
         while (seconds > 0)
         {
             Console.WriteLine($"{seconds}");
-            seconds--;
             Thread.Sleep(1000);
+            seconds--;
         }
         
     }
