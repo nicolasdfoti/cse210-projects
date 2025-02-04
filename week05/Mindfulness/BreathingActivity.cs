@@ -1,6 +1,6 @@
 class BreathingActivity : Activity
 {
-    public BreathingActivity(int duration) : base("Breathing Activity", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.", duration)
+    public BreathingActivity() : base("Breathing Activity", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.", 0)
     {
     }
 
@@ -8,18 +8,15 @@ class BreathingActivity : Activity
     {
         DisplayStartingMessage();
 
-        Console.WriteLine();
-
         Console.WriteLine(GetDescription());
         Console.WriteLine();
 
         GetTime();
-        int duration = int.Parse(Console.ReadLine());
 
+        int duration = int.Parse(Console.ReadLine());
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(duration);
 
-        Console.WriteLine("Let's get started...  ");
         ShowSpinner(3);
 
         Console.WriteLine();

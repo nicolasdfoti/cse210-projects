@@ -38,11 +38,13 @@ public class Activity
     {
         Console.Clear();
         Console.WriteLine($"Welcome to the {_name}!");
+        Console.WriteLine();
     }
 
     public void GetTime()
     {
         Console.Write("How long, in seconds, would you like for your session? ");
+
     }
 
     public void DisplayEndingMessage()

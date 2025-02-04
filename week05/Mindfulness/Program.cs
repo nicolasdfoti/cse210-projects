@@ -11,6 +11,8 @@ class Program
 
         while (option != "quit".ToLower()) {
 
+            Console.Clear();
+
             Console.WriteLine("Welcome to the Mindfulness Program!");
             Console.WriteLine("Choose one of the following: ");
             Console.WriteLine();
@@ -25,14 +27,14 @@ class Program
 
             if (option == "1") {
 
-                BreathingActivity activity1 = new BreathingActivity(30);
+                BreathingActivity activity1 = new BreathingActivity();
                 activity1.Run();
 
             }
 
             else if (option == "2") {
                 ReflectingActivity activity2 = new ReflectingActivity();
-                // activity2.Run();
+                activity2.Run();
 
             }
 
