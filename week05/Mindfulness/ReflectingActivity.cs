@@ -83,7 +83,9 @@ public class ReflectingActivity : Activity
         }
 
         DisplayEndingMessage();
-        ShowSpinner(5);
+
+        ShowSpinner(3);
+        
         Console.Clear();
     }
 

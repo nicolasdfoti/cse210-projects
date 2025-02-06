@@ -10,6 +10,7 @@ public class ListingActivity : Activity
     };
 
     public ListingActivity() : base("Listing Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.", 0) {
+        _count = 0;
     }
 
     Random random = new Random();
@@ -19,6 +20,11 @@ public class ListingActivity : Activity
         int index = random.Next(_prompts.Count);
         string question = _prompts[index];
         return question;
+    }
+
+    public int GetCount()
+    {
+        return _count;
     }
 
     public void Run()
@@ -32,7 +38,7 @@ public class ListingActivity : Activity
 
         int duration = GetTime();
         DateTime startTime = DateTime.Now;
-        DateTime futureTime = DateTime.Now.AddSeconds(duration);
+        DateTime futureTime = startTime.AddSeconds(duration);
 
         Console.WriteLine("Get ready... ");
         ShowSpinner(3);
@@ -53,13 +59,16 @@ public class ListingActivity : Activity
             Console.Write("- ");
             string answer = Console.ReadLine();
             _items.Add(answer);
+            _count++;
         }
 
         Console.WriteLine();
-        Console.WriteLine($"You've listed {_items.Count()} items! Good job!");
+        Console.WriteLine($"You've listed {GetCount()} items! Good job!");
 
         DisplayEndingMessage();
-        ShowSpinner(5);
+
+        ShowSpinner(3);
+        
         Console.Clear();
 
     }
