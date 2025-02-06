@@ -19,6 +19,7 @@ class Program
             Console.WriteLine("1. Breathing Activity.");
             Console.WriteLine("2. Reflecting Activity.");
             Console.WriteLine("3. Listing Activity.");
+            Console.WriteLine("4. Visualization Activity");
             Console.WriteLine();
             Console.Write("Enter your option here, or write QUIT to exit: ");
 
@@ -44,7 +45,13 @@ class Program
 
             }
 
-            else if (option != "1" && option != "2" && option != "3" && option != "quit".ToLower()) {
+            else if (option == "4") {
+                VisualizationActivity activity4 = new VisualizationActivity();
+                activity4.Run();
+
+            }
+
+            else if (option != "1" && option != "2" && option != "3" && option != "4" && option != "quit".ToLower()) {
                 Console.WriteLine("Please, choose a valid answer in numbers");
             }
 

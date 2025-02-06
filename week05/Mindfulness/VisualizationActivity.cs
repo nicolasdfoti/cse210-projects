@@ -35,19 +35,25 @@ public class VisualizationActivity : Activity
     {
         DisplayStartingMessage();
 
-        GetDescription();
+        Console.WriteLine(GetDescription());
         Console.WriteLine();
 
         Console.Write("Let's get started! ");
         ShowSpinner(5);
 
+        Console.WriteLine();
+        Console.WriteLine();
+
         int duration = GetTime();
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(duration);
 
+        Console.WriteLine("Take a deep breath...");
+        Console.WriteLine();
+
         while (DateTime.Now < futureTime)
         {
-            Console.WriteLine("Take a deep breath...");
+            Console.WriteLine(SelectRandomPrompt());
             ShowCountDown(3);
         }
 
