@@ -7,24 +7,12 @@ public class SimpleGoal : Goal
 
     public override void RecordEvent()
     {
-
         _isComplete = true;
-
-        if (_isComplete)
-        {
-            Console.WriteLine($"[X] {GetName()}, {GetDescription()}");
-        }
-
-        else
-        {
-            Console.WriteLine($"[ ] {GetName()}, {GetDescription()}");
-        }
-
     }
 
-    public override string GetDetailsString()
+    public override bool isComplete()
     {
-        return $"{GetName()}, {GetDescription()}, {GetPoints()} points";
+        return _isComplete;
     }
 
     public override string GetStringRepresentation()

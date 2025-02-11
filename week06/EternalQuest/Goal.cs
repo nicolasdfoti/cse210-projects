@@ -28,12 +28,12 @@ public abstract class Goal
 
     public abstract void RecordEvent();
 
-    public virtual bool isComplete()
-    {
-        return false;
-    }
+    public abstract bool isComplete();
 
-    public abstract string GetDetailsString();
+    public virtual string GetDetailsString()
+    {
+        return "";
+    }
 
     public abstract string GetStringRepresentation();
 }

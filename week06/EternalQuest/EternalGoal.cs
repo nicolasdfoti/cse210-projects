@@ -5,7 +5,21 @@ public class EternalGoal : Goal
 
     public override void RecordEvent()
     {
-        Console.WriteLine($"[ ] {GetName()}, {GetDescription()}");
-        
+        Console.WriteLine($"{GetName()} - +{GetPoints()}");
+    }
+
+    public override bool isComplete()
+    {
+        return false;
+    }
+
+    public override string GetDetailsString()
+    {
+        return $"{GetName()}, {GetDescription()} - {GetPoints()} points";
+    }
+
+    public override string GetStringRepresentation()
+    {
+        return $"[ ] {GetName()}, {GetDescription()} - {GetPoints()} points";
     }
 }
