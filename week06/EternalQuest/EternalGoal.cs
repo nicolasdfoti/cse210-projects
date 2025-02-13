@@ -15,11 +15,19 @@ public class EternalGoal : Goal
 
     public override string GetDetailsString()
     {
-        return $"{GetName()}, {GetDescription()} - {GetPoints()} points";
+        if (isComplete())
+        {
+            return $"[X] {GetName()}, {GetDescription()} - {GetPoints()} points";
+        }
+
+        else
+        {
+            return $"[ ] {GetName()}, {GetDescription()} - {GetPoints()} points";
+        }
     }
 
     public override string GetStringRepresentation()
     {
-        return $"[ ] {GetName()}, {GetDescription()} - {GetPoints()} points";
+        return $"[ ],{GetName()},{GetDescription()},{GetPoints()}";
     }
 }

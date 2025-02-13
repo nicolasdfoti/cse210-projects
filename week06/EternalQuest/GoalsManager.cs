@@ -51,12 +51,12 @@ public class GoalsManager
 
             else if (choice == "3")
             {
-
+                SaveGoals();
             }
 
             else if (choice == "4")
             {
-
+                LoadGoals();
             }
 
             else if (choice == "5")
@@ -67,6 +67,7 @@ public class GoalsManager
             else if (choice == "6" || choice == "quit".ToLower())
             {
                 Console.WriteLine("Thanks for using the Eternal Quest Program! Keep goaling! :)");
+                break;
             }
         } 
     }
@@ -88,12 +89,21 @@ public class GoalsManager
 
     public void ListGoalDetails()
     {
-        foreach (var goal in _goals)
+        if (_goals.Count == 0)
         {
-            Console.WriteLine(goal.GetStringRepresentation());
+            Console.WriteLine("You don't have any goals yet.");
         }
 
-        Console.WriteLine();
+        else
+        {
+            foreach (var goal in _goals)
+            {
+            Console.WriteLine(goal.GetDetailsString());
+            }
+
+            Console.WriteLine();
+        }
+        
     }
 
     public void CreateGoal()
@@ -189,9 +199,9 @@ public class GoalsManager
         Console.WriteLine();
         Console.WriteLine("- Which goal did you accomplish?");
         Console.Write("- Enter your answer in numbers: ");
-        Console.WriteLine();
-        
+
         int answer = int.Parse(Console.ReadLine());
+        Console.WriteLine();
 
         _goals[answer - 1].RecordEvent();
 
@@ -219,11 +229,74 @@ public class GoalsManager
 
     public void SaveGoals()
     {
+        Console.Write("- What is the name of the file: ");
+        string fileName = Console.ReadLine();
 
+        using (StreamWriter file = new StreamWriter(fileName))
+        {
+            Console.WriteLine(_score);
+            Console.WriteLine();
+
+            foreach (var goal in _goals)
+            {
+                file.WriteLine($"{goal.GetStringRepresentation()}");
+            }
+        }
+
+        Console.WriteLine("Saved successfully!");
+        Console.WriteLine();
     }
 
     public void LoadGoals()
     {
+        Console.Write("- What is the name of the file: ");
+        string fileName = Console.ReadLine();
+
+        if (File.Exists(fileName))
+        {
+            string[] lines = System.IO.File.ReadAllLines(fileName);
+
+            for (int i = 1; i < lines.Length; i++)
+            {
+                string[] parts = lines[i].Split(',');
+                string name = parts[1];
+                string description = parts[2];
+                int points = int.Parse(parts[3]);
+
+                if (lines[i].StartsWith("[X]"))
+                {
+                    var goal = new SimpleGoal(name, description, points);
+                    goal.RecordEvent();
+                    _goals.Add(goal);
+                }
+                else
+                {
+                    if (parts.Length == 4)
+                    {
+                        _goals.Add(new SimpleGoal(name, description, points));
+                    }
+
+                    else if (parts.Length == 5)
+                    {
+                        string[] checklistParts = parts[4].Split('/');
+                        int completed = int.Parse(checklistParts[0]);
+                        int target = int.Parse(checklistParts[1]);
+                        int bonus = int.Parse(parts[3]);
+                        var checklistGoal = new ChecklistGoal(target, bonus, name, description, points);
+                        for (int j = 0; j < completed; j++) checklistGoal.RecordEvent();
+                        _goals.Add(checklistGoal);
+                    }
+                }
+
+            }
+
+            Console.WriteLine();
+        }
+
+        else
+        {
+            Console.WriteLine($"File '{fileName}' does not exist.");
+        }
 
     }
 }

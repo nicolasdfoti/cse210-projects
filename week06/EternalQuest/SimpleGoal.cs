@@ -15,15 +15,29 @@ public class SimpleGoal : Goal
         return _isComplete;
     }
 
+    public override string GetDetailsString()
+    {
+        if (isComplete())
+        {
+            return $"[X] {GetName()}, {GetDescription()} - {GetPoints()} points";
+        }
+
+        else
+        {
+            return $"[ ] {GetName()}, {GetDescription()} - {GetPoints()} points";
+        }
+        
+    }
+
     public override string GetStringRepresentation()
     {
         if (isComplete())
         {
-            return $"[X] {GetName()}, {GetDescription()}, {GetPoints()}";
+            return $"[X],{GetName()},{GetDescription()},{GetPoints()}";
         }
         
         else {
-            return $"[ ] {GetName()}, {GetDescription()}, {GetPoints()}";
+            return $"[ ],{GetName()},{GetDescription()},{GetPoints()}";
         }  
     }
 }

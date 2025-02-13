@@ -21,7 +21,7 @@ public class ChecklistGoal : Goal
 
         if (isComplete())
         {
-            Console.WriteLine($"Congratulations! You completed '{GetName()}' and you earned {GetPoints()+ _bonus} points!");
+            Console.WriteLine($"Congratulations! You completed '{GetName()}' and earned {GetPoints()+ _bonus} points!");
         }
 
         else 
@@ -45,18 +45,27 @@ public class ChecklistGoal : Goal
 
     public override string GetDetailsString()
     {
-        return $"{GetName()} - {GetDescription()} - {_amountCompleted}/{_target} times completed.";
+        if (isComplete())
+        {
+            return $"[X] {GetName()} - {GetDescription()} - {_amountCompleted}/{_target} times completed.";
+        }
+
+        else
+        {
+            return $"[ ] {GetName()} - {GetDescription()} - {_amountCompleted}/{_target} times completed.";
+        }
+        
     }
 
     public override string GetStringRepresentation()
     {
         if (isComplete())
         {
-            return $"[X] {GetName()}, {GetDescription()}, {GetPoints()}";
+            return $"[X],{GetName()},{GetDescription()},{GetPoints()}";
         }
         
         else {
-            return $"[ ] {GetName()} - {_amountCompleted}/{_target} completed";
+            return $"[ ],{GetName()},{GetDescription()},{GetPoints()},{_amountCompleted}/{_target}";
         } 
     }
 

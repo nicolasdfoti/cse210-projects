@@ -30,10 +30,7 @@ public abstract class Goal
 
     public abstract bool isComplete();
 
-    public virtual string GetDetailsString()
-    {
-        return "";
-    }
+    public abstract string GetDetailsString();
 
     public abstract string GetStringRepresentation();
 }

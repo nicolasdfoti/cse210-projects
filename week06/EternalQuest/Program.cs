@@ -9,6 +9,5 @@ class Program
 
         GoalsManager manager = new GoalsManager();
         manager.Start();
-
     }
 }
