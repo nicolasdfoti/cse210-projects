@@ -44,9 +44,8 @@ public class GoalsManager
 
             else if (choice == "2")
             {
-                Console.WriteLine("List of goals: ");
                 Console.WriteLine();
-
+                Console.WriteLine("- List of goals: ");
                 ListGoalDetails();
             }
 
@@ -74,7 +73,7 @@ public class GoalsManager
 
     public void DisplayPlayerInfo()
     {
-        Console.WriteLine($"You have {_score} points");
+        Console.WriteLine($"- You have {_score} points");
         Console.WriteLine();
     }
 
@@ -100,7 +99,7 @@ public class GoalsManager
     public void CreateGoal()
     {
         Console.WriteLine();
-        Console.WriteLine("What type of goal do you want to add?");
+        Console.WriteLine("- What type of goal do you want to add?");
         Console.WriteLine();
 
         Console.WriteLine("1. Simple Goal.");
@@ -108,20 +107,20 @@ public class GoalsManager
         Console.WriteLine("3. Checklist Goal.");
         Console.WriteLine();
 
-        Console.Write("Enter your answer: ");
+        Console.Write("- Enter your answer: ");
 
         string answer = Console.ReadLine();
         Console.WriteLine();
 
         if (answer == "1")
         {
-            Console.Write("What is the name of the goal? ");
+            Console.Write("- What is the name of the goal? ");
             string name = Console.ReadLine();
 
-            Console.Write("What is the description of the goal? ");
+            Console.Write("- What is the description of the goal? ");
             string description = Console.ReadLine();
 
-            Console.Write("How many points do you want this goal to have? ");
+            Console.Write("- How many points do you want this goal to have? ");
             int points = int.Parse(Console.ReadLine());
             Console.WriteLine();
 
@@ -132,13 +131,13 @@ public class GoalsManager
 
         else if (answer == "2")
         {
-            Console.Write("What is the name of the goal? ");
+            Console.Write("- What is the name of the goal? ");
             string name = Console.ReadLine();
 
-            Console.Write("What is the description of the goal? ");
+            Console.Write("- What is the description of the goal? ");
             string description = Console.ReadLine();
 
-            Console.Write("How many points do you want this goal to have? ");
+            Console.Write("- How many points do you want this goal to have? ");
             int points = int.Parse(Console.ReadLine());
             Console.WriteLine();
 
@@ -149,19 +148,19 @@ public class GoalsManager
 
         else if (answer == "3")
         {
-            Console.Write("What is the name of the goal? ");
+            Console.Write("- What is the name of the goal? ");
             string name = Console.ReadLine();
 
-            Console.Write("What is the description of the goal? ");
+            Console.Write("- What is the description of the goal? ");
             string description = Console.ReadLine();
 
-            Console.Write("How many points do you want this goal to have? ");
+            Console.Write("- How many points do you want this goal to have? ");
             int points = int.Parse(Console.ReadLine());
 
-            Console.Write("Hw many time does this goal need to be accomplished for a bonus? ");
+            Console.Write("- How many time does this goal need to be accomplished for a bonus? ");
             int target = int.Parse(Console.ReadLine());
 
-            Console.Write("What is the bonus for accomplishing this goal? ");
+            Console.Write("- What is the bonus for accomplishing this goal? ");
             int bonus = int.Parse(Console.ReadLine());
             Console.WriteLine();
 
@@ -188,7 +187,9 @@ public class GoalsManager
         }
 
         Console.WriteLine();
-        Console.WriteLine("Which goal did you accomplish?");
+        Console.WriteLine("- Which goal did you accomplish?");
+        Console.Write("- Enter your answer in numbers: ");
+        Console.WriteLine();
         
         int answer = int.Parse(Console.ReadLine());
 
@@ -205,14 +206,6 @@ public class GoalsManager
             _score += checklist1.GetPoints();
             checklist1.GetStringRepresentation();
         }
-
-        else if (_goals[answer - 1] is ChecklistGoal checklist2 && checklist2.isComplete() ||
-                _goals[answer - 1] is SimpleGoal simple && simple.isComplete() ||
-                _goals[answer - 1] is EternalGoal eternal && eternal.isComplete())
-        {
-            Console.WriteLine("You have completed this goal already.");
-        }
-
 
         else
         {
