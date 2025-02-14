@@ -304,7 +304,7 @@ public class GoalsManager
             {
                 string[] parts = lines[i].Split(",");
 
-                if (parts.Length == 3)
+                if (parts.Length == 4)
                 {
                     string name = parts[1];
                     string description = parts[2];
@@ -344,6 +344,7 @@ public class GoalsManager
         else
         {
             Console.WriteLine($"File '{fileName}' does not exist.");
+            Console.WriteLine();
         }
 
     }
