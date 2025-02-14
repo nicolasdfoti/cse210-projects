@@ -309,19 +309,19 @@ public class GoalsManager
 
                     if (parts.Length == 4)
                     {
-                        string name = parts[1];
-                        string description = parts[2];
-                        int points = int.Parse(parts[3]);
+                        string name = parts[0];
+                        string description = parts[1];
+                        int points = int.Parse(parts[2]);
                         Goal simpleGoal = new SimpleGoal(name, description, points);
                         _goals.Add(simpleGoal);
                     }
 
                     else if (parts.Length == 4)
                     {
-                        string brackets = parts[1];
-                        string name = parts[2];
-                        string description = parts[3];
-                        int points = int.Parse(parts[4]);
+                        string brackets = parts[0];
+                        string name = parts[1];
+                        string description = parts[2];
+                        int points = int.Parse(parts[3]);
 
                         Goal eternalGoal = new EternalGoal(brackets, name, description, points);
                         _goals.Add(eternalGoal);
@@ -329,11 +329,11 @@ public class GoalsManager
 
                     else if (parts.Length >= 5)
                     {
-                        string name = parts[1];
-                        string description = parts[2];
-                        int points = int.Parse(parts[3]);
-                        int target = int.Parse(parts[4]);
-                        int bonus = int.Parse(parts[5]);
+                        string name = parts[0];
+                        string description = parts[1];
+                        int points = int.Parse(parts[2]);
+                        int target = int.Parse(parts[3]);
+                        int bonus = int.Parse(parts[4]);
 
                         Goal checkListGoal = new ChecklistGoal(target, bonus, name, description, points);
                         _goals.Add(checkListGoal);
