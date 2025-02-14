@@ -1,5 +1,3 @@
-using System.Globalization;
-
 public class SwimmingPool : Activity
 {
     private int _numberLaps;
