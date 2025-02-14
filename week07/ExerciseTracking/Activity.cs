@@ -24,6 +24,6 @@ public abstract class Activity
     public abstract double GetPace();
     public string GetSummary()
     {
-        return $"{_date} - Distance: {GetDistance()} km - Speed: {GetSpeed()} km/h - Pace: {GetPace()} min per km";
+        return $"{_date.ToString("dd MMM yyyy HH:mm")} - Distance: {GetDistance()} km - Speed: {GetSpeed()} km/h - Pace: {GetPace()} min per km";
     }
 }

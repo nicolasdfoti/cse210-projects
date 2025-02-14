@@ -15,7 +15,7 @@ class Program
         Running runningActivity = new Running(new DateTime(2025, 2, 14), 45, 10);
         _activities.Add(runningActivity);
 
-        StationaryBikes stationaryBikes = new StationaryBikes(40, (new DateTime(2025, 2, 14)), 10);
+        StationaryBikes stationaryBikes = new StationaryBikes(40, new DateTime(2025, 2, 14), 10);
         _activities.Add(stationaryBikes);
 
         SwimmingPool swimmingPool = new SwimmingPool(100, (new DateTime(2025, 2, 14)), 40);
