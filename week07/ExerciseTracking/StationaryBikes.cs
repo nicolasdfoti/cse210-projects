@@ -12,6 +12,11 @@ public class StationaryBikes : Activity
         return (_speed * GetLength()) / 60;
     }
 
+    public override double GetSpeed()
+    {
+        return _speed;
+    }
+
     public override double GetPace()
     {
         return 60 / _speed;
