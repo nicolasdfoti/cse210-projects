@@ -296,48 +296,52 @@ public class GoalsManager
 
         if (File.Exists(fileName))
         {
-            string[] lines = System.IO.File.ReadAllLines(fileName);
 
-            _score = int.Parse(lines[0]);
-            
-            for (int i = 1; i < lines.Length; i++)
+            using (StreamReader reader = new StreamReader(fileName))
             {
-                string[] parts = lines[i].Split(",");
+                string[] lines = System.IO.File.ReadAllLines(fileName);
 
-                if (parts.Length == 4)
+                _score = int.Parse(lines[0]);
+            
+                for (int i = 1; i < lines.Length; i++)
                 {
-                    string name = parts[1];
-                    string description = parts[2];
-                    int points = int.Parse(parts[3]);
-                    Goal simpleGoal = new SimpleGoal(name, description, points);
-                    _goals.Add(simpleGoal);
+                    string[] parts = lines[i].Split(",");
+
+                    if (parts.Length == 4)
+                    {
+                        string name = parts[1];
+                        string description = parts[2];
+                        int points = int.Parse(parts[3]);
+                        Goal simpleGoal = new SimpleGoal(name, description, points);
+                        _goals.Add(simpleGoal);
+                    }
+
+                    else if (parts.Length == 4)
+                    {
+                        string brackets = parts[1];
+                        string name = parts[2];
+                        string description = parts[3];
+                        int points = int.Parse(parts[4]);
+
+                        Goal eternalGoal = new EternalGoal(brackets, name, description, points);
+                        _goals.Add(eternalGoal);
+                    }
+
+                    else if (parts.Length >= 5)
+                    {
+                        string name = parts[1];
+                        string description = parts[2];
+                        int points = int.Parse(parts[3]);
+                        int target = int.Parse(parts[4]);
+                        int bonus = int.Parse(parts[5]);
+
+                        Goal checkListGoal = new ChecklistGoal(target, bonus, name, description, points);
+                        _goals.Add(checkListGoal);
+                    }
+
+                    Console.WriteLine("Loaded successfully!");
+                    Console.WriteLine();
                 }
-
-                else if (parts.Length == 4)
-                {
-                    string brackets = parts[1];
-                    string name = parts[2];
-                    string description = parts[3];
-                    int points = int.Parse(parts[4]);
-
-                    Goal eternalGoal = new EternalGoal(brackets, name, description, points);
-                    _goals.Add(eternalGoal);
-                }
-
-                else if (parts.Length >= 5)
-                {
-                    string name = parts[1];
-                    string description = parts[2];
-                    int points = int.Parse(parts[3]);
-                    int target = int.Parse(parts[4]);
-                    int bonus = int.Parse(parts[5]);
-
-                    Goal checkListGoal = new ChecklistGoal(target, bonus, name, description, points);
-                    _goals.Add(checkListGoal);
-                }
-
-                Console.WriteLine("Loaded successfully!");
-                Console.WriteLine();
             }
         }
 
