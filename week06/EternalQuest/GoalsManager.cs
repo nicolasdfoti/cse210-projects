@@ -304,7 +304,7 @@ public class GoalsManager
             {
                 string[] parts = lines[i].Split(",");
 
-                if (parts.Length == 4)
+                if (parts.Length == 3)
                 {
                     string name = parts[1];
                     string description = parts[2];
@@ -313,7 +313,7 @@ public class GoalsManager
                     _goals.Add(simpleGoal);
                 }
 
-                else if (parts.Length == 3)
+                else if (parts.Length == 4)
                 {
                     string brackets = parts[1];
                     string name = parts[2];
