@@ -61,11 +61,11 @@ public class ChecklistGoal : Goal
     {
         if (isComplete())
         {
-            return $"[X],{GetName()},{GetDescription()},{GetPoints()}";
+            return $"[X] {GetName()},{GetDescription()},{GetPoints()}";
         }
         
         else {
-            return $"[ ],{GetName()},{GetDescription()},{GetPoints()},{_amountCompleted}/{_target}";
+            return $"[ ] {GetName()},{GetDescription()},{GetPoints()},{_amountCompleted},{_target} ";
         } 
     }
 

@@ -1,6 +1,6 @@
 public class EternalGoal : Goal
 {
-    public EternalGoal(string name, string description, int points) : base(name, description, points)
+    public EternalGoal(string brackets, string name, string description, int points) : base(name, description, points)
     {}
 
     public override void RecordEvent()
@@ -15,15 +15,7 @@ public class EternalGoal : Goal
 
     public override string GetDetailsString()
     {
-        if (isComplete())
-        {
-            return $"[X] {GetName()}, {GetDescription()} - {GetPoints()} points";
-        }
-
-        else
-        {
-            return $"[ ] {GetName()}, {GetDescription()} - {GetPoints()} points";
-        }
+        return $"[ ] {GetName()}, {GetDescription()} - {GetPoints()} points";
     }
 
     public override string GetStringRepresentation()

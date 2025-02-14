@@ -33,11 +33,11 @@ public class SimpleGoal : Goal
     {
         if (isComplete())
         {
-            return $"[X],{GetName()},{GetDescription()},{GetPoints()}";
+            return $"[X] {GetName()},{GetDescription()},{GetPoints()}";
         }
         
         else {
-            return $"[ ],{GetName()},{GetDescription()},{GetPoints()}";
+            return $"[ ] {GetName()},{GetDescription()},{GetPoints()}";
         }  
     }
 }
